@@ -139,3 +139,18 @@ function actualizarCabeceraChat(_contactName,_imageURL,_estado)
 	chatHeader.getElementsByClassName('w-users-messages')[0].innerHTML=_estado;
 	chatHeader.getElementsByTagName('img')[0].src=_imageURL;
 }
+
+
+ var search = document.getElementById("search"),
+   	food = document.getElementsByTagName("h4"),
+    forEach = Array.prototype.forEach;
+    	//console.log(food);
+	search.addEventListener("keyup", function(e){
+    var choice = this.value;
+    forEach.call(food, function(f){
+         if (f.innerHTML.toLowerCase().search(choice.toLowerCase()) == -1)
+            f.parentNode.parentNode.style.display = "none";        
+         else
+             f.parentNode.parentNode.style.display = "block";        
+     });
+ 	},false); 
